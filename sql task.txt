@@ -1,0 +1,45 @@
+CREATE TABLE  `products` (
+  `id`int(6) unsigned NOT NULL,
+  `name` varchar(200)  NOT NULL,
+  `material` varchar(200)  NOT NULL,
+  `price` int(6) unsigned NOT NULL,
+  `color` varchar(200)  NOT NULL
+  
+) DEFAULT CHARSET=utf8;
+
+insert into products (`id`,`name`,`material`,`price`,`color`) values (1,"pensil","hard",400,"black"),
+(2,"notebook","soft",500,"orange"),
+(3,"pensil","hard",600,"black"),(4,"notebook","soft",800,"orange"),
+(5,"eraser","hard",492,"indigo"),(6,"sharpener","soft",800,"purple"),
+(7,"headphone","hard",900,"black"),(8,"mobile","soft",750,"pink"),
+(9,"pen drive","hard",650,"black"),(10,"mouse","soft",300,"green")
+
+1)Find all the information about each products
+	select * from products
+
+2)Find the product price which are between 400 to 800
+	SELECT * FROM products WHERE price  BETWEEN 400 AND 800
+
+3)Find the product price which are not between 400 to 600
+	SELECT * FROM products WHERE price NOT BETWEEN 400 AND 800
+
+4)List the four product which are grater than 500 in price
+	SELECT * FROM products WHERE price >500 limit 4 
+
+5)Find the product name and product material of each products
+	SELECT name, material FROM products
+
+6)Find the product with a row id of 10
+	SELECT * FROM products where id=10
+
+7)Find only the product name and product material
+	SELECT name, material FROM products
+
+8)Find all products which contain the value of soft in product material
+	SELECT * FROM products where material="soft"
+
+9)Find products which contain product color indigo  and product price 492.00
+	SELECT * FROM products where color="indigo" and price=492
+
+10)Delete the products which product price value are same
+	
